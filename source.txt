@@ -1,0 +1,45 @@
+  <script src="./app.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script> 
+  <script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#090909",
+      "text": "#ffffff"
+    },
+    "button": {
+      "background": "transparent",
+      "text": "#ec2332",
+      "border": "#e9e9e9"
+    }
+  },
+  "type": "opt-out"
+});
+</script>  
+  
+ 
+<script type="text/javascript" id="dcoder_script">const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+const header = document.querySelector('.header.container');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobile_menu.classList.toggle('active');
+});
+
+document.addEventListener('scroll', () => {
+  var scroll_position = window.scrollY;
+  if (scroll_position > 250) {
+    header.style.backgroundColor = '#29323c';
+  } else {
+    header.style.backgroundColor = 'transparent';
+  }
+});
+
+menu_item.forEach((item) => {
+  item.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobile_menu.classList.toggle('active');
+  });
+});
